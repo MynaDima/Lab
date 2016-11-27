@@ -18,7 +18,7 @@ public class CalculateResultServiceImpl implements CalculateResultService {
         return c;
     }
 
-    public double getSquare(int firstLength, int secondLength, int angle) {
+    public double getSquare(int firstLength, int secondLength, int angle){
         log.debug("service.CalculateResultServiceImpl getSquare: start");
         double thirdSide = cosineTheorem(firstLength, secondLength, angle);
         log.debug("service.CalculateResultServiceImpl getSquare: end");

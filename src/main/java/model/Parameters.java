@@ -2,12 +2,26 @@ package model;
 
 public class Parameters {
 
+    private static Parameters instance;
+
     private int firstSideLength;
     private int secondSideLength;
     private int angle;
 
-    public Parameters() {
+    private Parameters() {
     }
+
+    public static Parameters getInstance() {
+        if (instance == null) {
+            synchronized (Parameters.class) {
+                if (instance == null) {
+                    instance = new Parameters();
+                }
+            }
+        }
+        return instance;
+    }
+
 
     public int getFirstSideLength() {
         return firstSideLength;
